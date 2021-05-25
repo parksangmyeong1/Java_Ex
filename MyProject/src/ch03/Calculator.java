@@ -3,17 +3,17 @@ package ch03;
 import java.util.*;
 
 public class Calculator {
-	public int add(int a, int b) {
-		return a+b;
+	public long add(int num1, int num2) {
+		return num1+num2;
 	}
-	public int sub(int a, int b) {
-		return a-b;
+	public long sub(int num1, int num2) {
+		return num1-num2;
 	}
-	public int mul(int a, int b) {
-		return a*b;
+	public long mul(int num1, int num2) {
+		return num1*num2;
 	}
-	public int div(int a, int b) {
-		return a/b;
+	public long div(int num1, int num2) {
+		return num1/num2;
 	}
 	public double area(int r) {
 		return Math.PI*r*r;
