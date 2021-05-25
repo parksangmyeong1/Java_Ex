@@ -35,4 +35,5 @@ public class Calculator {
 		System.out.printf("%.6f\n",cal.area(input));
 		System.out.printf("%.6f\n",cal.length(input));
 	}
+	
 }	
