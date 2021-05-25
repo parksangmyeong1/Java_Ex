@@ -1,4 +1,4 @@
-package Example;
+package ch01;
 
 public class Calculator {
 	public void add(int a, int b) {

@@ -1,4 +1,4 @@
-package Example;
+package ch01;
 
 public class Person {
 	String name;
