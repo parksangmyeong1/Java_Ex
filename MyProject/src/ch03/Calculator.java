@@ -24,10 +24,15 @@ public class Calculator {
 	public static void main(String[] args) {
 		Calculator cal = new Calculator();
 		
-		System.out.println(cal.add(1, 2));
-		System.out.println(cal.sub(1, 2));
-		System.out.println(cal.mul(2, 3));
-		System.out.println(cal.div(4, 2));
+		Scanner sc1 = new Scanner(System.in);
+		int num1 = sc1.nextInt();
+		Scanner sc2 = new Scanner(System.in);
+		int num2 = sc2.nextInt();
+		
+		System.out.println(cal.add(num1, num2));
+		System.out.println(cal.sub(num1, num2));
+		System.out.println(cal.mul(num2, num2));
+		System.out.println(cal.div(num1, num2));
 		
 		Scanner s = new Scanner(System.in);
 		double input = s.nextDouble();
