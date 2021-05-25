@@ -1,7 +1,6 @@
 package ch01;
 
 public class Calculator {
-	
 	public void add(int a, int b) {
 		System.out.println("더하기 : " + (a+b));
 	}
