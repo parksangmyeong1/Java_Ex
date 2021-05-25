@@ -7,7 +7,7 @@ public class Calculator {
 	public void sub(int a, int b) {
 		System.out.println("빼기 : " + (a-b));
 	}
-	public void mul(int a, int b) {
+	public void mul(int a, int b) { 
 		System.out.println("곱하기 : " + (a*b));
 	}
 	public void div(int a, int b) {
