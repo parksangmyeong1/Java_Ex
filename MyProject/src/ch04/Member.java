@@ -3,8 +3,8 @@ package ch04;
 import java.util.*;
 
 public class Member{	
-	public void fluCheck(int year) {
-		int age = Calendar.getInstance().get(Calendar.YEAR)+1-year;
+	public void vaccinCheck(int bithYear) {
+		int age = Calendar.getInstance().get(Calendar.YEAR)+1-bithYear;
 		if (age<15 || age>=65) {
 			System.out.println("무료예방접종이 가능합니다.");
 			System.out.println();
@@ -14,20 +14,20 @@ public class Member{
 			System.out.println();
 		}
 	}
-	public void healthCheck(int year) {
+	public void healthCheck(int bithYear) {
 		int thisYear = Calendar.getInstance().get(Calendar.YEAR);
-		int age = thisYear+1-year;
+		int age = thisYear+1-bithYear;
 		if(age>=20){
 			if(age%2==0 && thisYear%2==0) {
 				System.out.println("올해 건강검진 대상자입니다.");
 				if(age>=40) {
 					System.out.println("추가로 암검사도 무료로 가능합니다.");
 				}
-			}
+			}else {
+				System.out.println("올해 건강검진 대상자가 아닙니다.");
+				}
 		}
-		else {
-			System.out.println("올해 건강검진 대상자가 아닙니다.");
-		}
+		
 	}
 	public static void main(String[] args) {		
 		Member member = new Member();
@@ -36,7 +36,7 @@ public class Member{
 		int input = s.nextInt();
 		System.out.println("------------------------------");
 		
-		member.fluCheck(input);
+		member.vaccinCheck(input);
 		member.healthCheck(input);
 	}
 
