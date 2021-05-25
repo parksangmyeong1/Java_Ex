@@ -16,7 +16,7 @@ public class Person {
 		System.out.println("주민등록번호 : " + idNo);
 	}
 	public static void main(String[] args) {
-		Person person = new Person("박상명","010-1234-5678","210525-112233445");
+		Person person = new Person("박상명","010-1234-5678","210525-1234567");
 		
 		person.Info();
 	}
