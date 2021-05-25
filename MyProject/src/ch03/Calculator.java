@@ -15,10 +15,10 @@ public class Calculator {
 	public long div(int num1, int num2) {
 		return num1/num2;
 	}
-	public double area(int r) {
+	public double area(double r) {
 		return Math.PI*r*r;
 	}
-	public double length(int r) {
+	public double length(double r) {
 		return 2*Math.PI*r;
 	}
 	public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class Calculator {
 		System.out.println(cal.div(4, 2));
 		
 		Scanner s = new Scanner(System.in);
-		int input = s.nextInt();
+		double input = s.nextDouble();
 		
 		System.out.printf("%.6f\n",cal.area(input));
 		System.out.printf("%.6f\n",cal.length(input));
