@@ -18,6 +18,7 @@ public class Member {
 		System.out.println("키 : " + height);
 		System.out.println("책 보유 : " + hasBook);
 	}
+
 	public static void main(String[] args) {		
 		Member member = new Member("박상명",20,160.0,true);
 		
