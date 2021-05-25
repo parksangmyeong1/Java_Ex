@@ -22,6 +22,7 @@ public class Calculator {
 		return 2*Math.PI*r;
 	}
 	public static void main(String[] args) {
+		
 		Calculator cal = new Calculator();
 		
 		Scanner sc1 = new Scanner(System.in);
