@@ -1,21 +1,28 @@
 package ex.io;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
-public class ByteFileCopy {
+public class ByteBufferedFileCopy {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		try {
 			// 1. 파일을 바이너리 데이터를 읽어올 스트림 생성 : FileInputStream
-			FileInputStream in = new FileInputStream("origin.pdf");
+			InputStream in = new FileInputStream("origin.pdf");
 			
 			// 2. 파일을 쓰기위한 스트림 생성 : File OutputStream
-			FileOutputStream out = new FileOutputStream("copy.pdf");
+			OutputStream out = new FileOutputStream("copy3.pdf");
+			
+			// 필터 스트림 생성 -> 기본 스트림이 필요(위에 정의)
+			BufferedInputStream fin = new BufferedInputStream(in);
+			BufferedOutputStream fout = new BufferedOutputStream(out);
 			
 			// 카피한 데이터의 크기
 			int copyByte = 0;
@@ -23,14 +30,14 @@ public class ByteFileCopy {
 			int bData = -1;
 			
 			while(true) {
-				bData = in.read();
+				bData = fin.read();
 				
 				// 탈출의 조건 : 파일의 모든 데이터를 읽은 경우
 				if(bData==-1) {
 					break;
 				}
 				// 출력 : 파일에 데이터를 쓴다
-				out.write(bData);
+				fout.write(bData);
 				copyByte++;
 			}
 			// 스트림 닫기
