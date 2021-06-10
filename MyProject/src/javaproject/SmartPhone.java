@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SmartPhone {
-    String name, phone, email, address, birth, group;
+    String name, phone, email, address, birth, group,
+    company, department, position, client, item;    
     
     List<Contact> contacts = new ArrayList<Contact>();
     
@@ -22,13 +23,38 @@ public class SmartPhone {
         address = sc.nextLine();
         System.out.print("생일을 입력해주세요 : ");
         birth = sc.nextLine();
-        System.out.print("그룹을 입력해주세요 : ");
+        System.out.print("그룹을 선택해주세요 \n1. 회사 2. 거래처 : ");
         group = sc.nextLine();
+        if(group.equals("1")) {
+        	group = "회사";
+        	System.out.printf("회사이름을 입력해주세요 : ");
+        	company = sc.nextLine();
+        	System.out.printf("부서이름을 입력해주세요 : ");
+        	company = sc.nextLine();
+        	System.out.printf("직급을 입력해주세요 : ");
+        	company = sc.nextLine();
+        	
+        	Contact person = new CompanyContact(name, phone, email, address, birth, group, company, department, position);
+        	contacts.add(person);
+        }
+        else if(group.equals("2")) {
+        	group = "거래처";
+        	System.out.printf("거래처회사이름을 입력해주세요 : ");
+        	company = sc.nextLine();
+        	System.out.printf("거래품목을 입력해주세요 : ");
+        	company = sc.nextLine();
+        	System.out.printf("직급을 입력해주세요 : ");
+        	company = sc.nextLine();
+    	
+        	Contact person = new CustomerContact(name, phone, email, address, birth, group, client, item, position);
+        	contacts.add(person);
+        }
+        else {
+        	System.out.println("잘못입력하셨습니다.");
+        }
         System.out.println("--------------------");
         
-        Contact person = new Contact(name, phone, email, address, birth, group);
         
-        contacts.add(person);
     }
     
     void showContact() {
@@ -89,32 +115,32 @@ public class SmartPhone {
             	case 1 : 
                 	name = sc.nextLine();
                 	contacts.get(i).setName(name);
-                	System.out.println(contacts.get(i).getName());
+                	System.out.println(contacts.get(i).getName() + "님의 이름이 " + name + "으로 수정되었습니다.");
                 	break;
             	case 2 : 
             		phone = sc.nextLine();
-                	contacts.get(i).setName(phone);
-                	System.out.println(contacts.get(i).getPhone());
+                	contacts.get(i).setPhone(phone);
+                	System.out.println(contacts.get(i).getName() + "님의 전화번호가 " + phone + "으로 수정되었습니다.");
                 	break;
             	case 3 : 
             		email = sc.nextLine();
-                	contacts.get(i).setName(email);
-                	System.out.println(contacts.get(i).getEmail());
+                	contacts.get(i).setEmail(email);
+                	System.out.println(contacts.get(i).getName() + "님의 이메일이 " + email + "으로 수정되었습니다.");
                 	break;
             	case 4 : 
             		address = sc.nextLine();
-                	contacts.get(i).setName(address);
-                	System.out.println(contacts.get(i).getAddress());
+                	contacts.get(i).setAddress(address);
+                	System.out.println(contacts.get(i).getName() + "님의 주소가 " + address + "으로 수정되었습니다.");
                 	break;
             	case 5 : 
             		birth = sc.nextLine();
-                	contacts.get(i).setName(birth);
-                	System.out.println(contacts.get(i).getBirth());
+                	contacts.get(i).setBirth(birth);
+                	System.out.println(contacts.get(i).getName() + "님의 생일이 " + birth + "으로 수정되었습니다.");
                 	break;
             	case 6 : 
                 	group = sc.nextLine();
-                	contacts.get(i).setName(group);
-                	System.out.println(contacts.get(i).getGroup());
+                	contacts.get(i).setGroup(group);
+                	System.out.println(contacts.get(i).getName() + "님의 그룹이 " + group + "으로 수정되었습니다.");
                 	break;
                 	
             	}
