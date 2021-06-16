@@ -26,7 +26,7 @@ create table phoneInfo_com(
     fr_ref NUMBER(6) constraint com_ref_fk references phoneInfo_basic (idx) -- 친구의 기본 정보 외래키 not null
                     constraint com_fr_ref_nn not null
 );
--- 0616 표기할수없나?
+
 -- phoneInfo_basic insert
 insert into phoneInfo_basic values ('1','박철수','01015948731','pcs@naver.com','서울','210616');
 insert into phoneInfo_basic values ('2','김미영','01016429587','kmy@hanmail.net','인천','210420');
