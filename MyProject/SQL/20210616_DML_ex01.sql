@@ -45,8 +45,8 @@ rollback;
 -- phoneInfo_univ select
 select * from phoneInfo_univ;
 -- phoneInfo_univ insert 를 위해 phoneInfo_basic
-insert into phoneInfo_univ values ((select nvl(max(idx),0)+1 from phoneInfo_univ),'수학',3,(select idx from phoneInfo_basic where fr_name = '김철수'));
-insert into phoneInfo_univ values ((select nvl(max(idx),0)+1 from phoneInfo_univ),'화학',2,(select idx from phoneInfo_basic where fr_name = '김미영'));
+insert into phoneInfo_univ values ('1','수학',3,(select idx from phoneInfo_basic where fr_name = '김철수'));
+insert into phoneInfo_univ values ('2','화학',2,(select idx from phoneInfo_basic where fr_name = '김미영'));
 -- phoneInfo_univ update
 update phoneInfo_univ set fr_u_major = '물리' where idx = 1;
 -- phoneInfo_univ delete
@@ -56,9 +56,9 @@ delete from phoneInfo_univ;
 -- phoneInfo_com select
 select * from phoneInfo_com order by idx;
 -- phoneInfo_univ insert 를 위해 phoneInfo_basic
-insert into phoneInfo_com values ((select nvl(max(idx),0)+1 from phoneInfo_univ),'비트캠프',(select idx from phoneInfo_basic where fr_name = '이수지'));
-insert into phoneInfo_com values ((select nvl(max(idx),0)+1 from phoneInfo_univ),'효성캠프',(select idx from phoneInfo_basic where fr_name = '최정길'));
-insert into phoneInfo_com values ((select nvl(max(idx),0)+1 from phoneInfo_univ),'롯데캠프',(select idx from phoneInfo_basic where fr_name = '정희원'));
+insert into phoneInfo_com values ((select nvl(max(idx),0)+1 from phoneInfo_com),'비트캠프',(select idx from phoneInfo_basic where fr_name = '이수지'));
+insert into phoneInfo_com values ((select nvl(max(idx),0)+1 from phoneInfo_com),'효성캠프',(select idx from phoneInfo_basic where fr_name = '최정길'));
+insert into phoneInfo_com values ((select nvl(max(idx),0)+1 from phoneInfo_com),'롯데캠프',(select idx from phoneInfo_basic where fr_name = '정희원'));
 -- phoneInfo_univ update
 update phoneInfo_com set fr_c_company = '신촌캠프' where idx = 1;
 -- phoneInfo_univ delete
