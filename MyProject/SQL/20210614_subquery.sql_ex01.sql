@@ -12,8 +12,8 @@ select job, avg(sal) from emp group by job
 having avg(sal) = (select min(avg(sal)) from emp group by job);
 
 -- 47. 각 부서의 최소 급여를 받는 사원의 이름, 급여, 부서번호를 표시하시오.
-select ename, sal, deptno from emp where sal in (select min(sal) from emp group by deptno) 
-order by deptno;
+select e.ename, e.sal, e.deptno from emp e
+where e.sal = (select min(sal) from emp m where m.deptno = m.deptno);
 
 -- 48. 담당업무가 ANALYST 인 사원보다 급여가 적으면서 업무가 ANALYST가 
 -- 아닌 사원들을 표시(사원번호, 이름, 담당 업무, 급여)하시오.
