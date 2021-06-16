@@ -30,3 +30,7 @@ create table phoneInfo_com(
 desc phoneInfo_basic;
 desc phoneInfo_univ;
 desc phoneInfo_com;
+
+drop table phoneInfo_univ;
+drop table phoneInfo_com;
+drop table phoneInfo_basic;
