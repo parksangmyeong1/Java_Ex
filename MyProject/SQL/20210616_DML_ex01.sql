@@ -70,5 +70,7 @@ select fr_name,fr_phonenumber,fr_email,fr_address,fr_regdate, fr_u_major, fr_u_y
 -- basic & com 1. inner join 2. outer join
 select fr_name,fr_phonenumber,fr_email,fr_address,fr_regdate, fr_c_company from phoneInfo_basic b join phoneInfo_com c on b.idx = c.fr_ref;
 -- all outer join
-select fr_name,fr_phonenumber,fr_email,fr_address,fr_regdate, fr_u_major, fr_u_year,fr_c_company from phoneInfo_basic b full outer join phoneInfo_univ u on b.idx = u.fr_ref
-                                full outer join phoneInfo_com c on b.idx = c.fr_ref;
+select fr_name,fr_phonenumber,fr_email,fr_address,fr_regdate, fr_u_major, fr_u_year,fr_c_company 
+from phoneInfo_basic b 
+full outer join phoneInfo_univ u on b.idx = u.fr_ref
+full outer join phoneInfo_com c on b.idx = c.fr_ref;
