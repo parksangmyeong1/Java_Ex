@@ -138,7 +138,7 @@ public class DeptDao {
 			pstmt.setString(2, dept.getLoc());
 			pstmt.setInt(3, dept.getDeptno());
 			
-			result = pstmt.executeUpdate(); // 1이 저장된다.
+			result = pstmt.executeUpdate(); // SQL문과 관련된 레코드의 수를 반환
 			
 			
 			
